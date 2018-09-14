@@ -1,0 +1,24 @@
+<div>
+    <h2>Welcome {{appTitle}}</h2>
+
+    <!-- parent and children 
+        app is parent component
+        header, about, home, footer are child components
+    -->
+
+    <app-header>
+    </app-header>
+
+    <app-home></app-home>
+    <app-contact></app-contact>
+    
+    <app-about></app-about>
+
+ 
+    <app-footer  [company]="appTitle" 
+                 year = "2016 + 2" >
+        
+    </app-footer>
+ 
+
+</div>

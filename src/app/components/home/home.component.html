@@ -1,0 +1,30 @@
+<h2>{{title}}</h2>
+<!--
+ {{expr}} - interpolation
+ [html property]="expr" - property binding
+ (event)="expr" - Event binding
+-->
+
+<p> Counter {{counter}}</p>
+<p> Counter * 10 ==> {{counter * 10}}</p>
+<p> Counter {{counter % 2 == 0? 'Even': 'Odd'}}</p>
+
+<input [value]="counter"
+       (focus)="onFocus($event)"
+       (blur)="onBlur($event)"
+/>
+
+Counter * 2
+<input [value]="counter * 2" />
+
+<button [disabled]="counter % 2 == 0">
+  Hello
+</button>
+
+<button (click)="increment($event)">
+  +1
+</button>
+
+<button (click)="counter = counter - 1">
+  -1
+</button>

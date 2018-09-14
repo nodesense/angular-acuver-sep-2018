@@ -1,0 +1,44 @@
+<h2>About</h2>
+
+<!-- # template ref variable
+    scope is limited to current component
+-->
+<input #personName />
+
+<p #p1> Para </p>
+
+<!-- personName is a DOM element -->
+
+<button (click)="add(personName.value);personName.value='' ">
+  Add
+</button>
+
+<button (click)="empty()">
+  Empty
+</button>
+
+<button (click)="showMembers = !showMembers">
+  Show/Hide
+</button>
+
+<ul *ngIf="showMembers == true else membersNotShown">
+  <li *ngFor='let memberName of members;let i=index'>
+    {{i}}-{{memberName}}
+
+    <button (click)="remove(i)">
+       X
+    </button>
+  </li>
+</ul>
+
+<!-- place holder -->
+<ng-template #membersNotShown>
+  <p>Members list [{{members.length}}] is not shown</p>
+</ng-template>
+
+<!-- ng 2.x onwards
+      # - template reference variable
+      membersNotShown is DOM Element
+-->
+
+<!-- ng 4.x has else part for *ngIf-->

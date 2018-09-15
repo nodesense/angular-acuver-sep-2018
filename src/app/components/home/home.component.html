@@ -23,10 +23,15 @@ Counter * 2
   Hello
 </button>
 
+
+<button bind-disabled="counter % 2 == 0">
+    Hello 2
+  </button>
+
 <button (click)="increment($event)">
   +1
 </button>
 
-<button (click)="counter = counter - 1">
+<button on-click="counter = counter - 1">
   -1
 </button>

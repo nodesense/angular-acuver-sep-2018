@@ -1,3 +1,4 @@
+import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
 // app.module.ts
@@ -13,13 +14,48 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
- // meta data
+import { NotFoundComponent } from './components/not-found/not-found.component';
+
+import {Routes, RouterModule} from '@angular/router';
+
+// ng 4.3 onwards
+import {HttpClientModule} from '@angular/common/http';
+
+
+// step 1: configure url to component mapping
+const routes: Routes = [
+    {
+        path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'about',
+        component: AboutComponent
+    },
+    {
+        path: 'contact',
+        component: ContactComponent
+    },
+
+    {
+        path: '**',
+        component: NotFoundComponent
+    }
+];
+
+// meta data
 @NgModule({
     imports: [
         // browser includes common, compiler modules
         BrowserModule,
+        // Step 2: apply route config to Angular
+        // forRoot create a dynamic route module
+        // based on routes
+        RouterModule.forRoot(routes),
+        HttpClientModule,
         SharedModule,
-        CartModule
+        CartModule, // also include cart routes
+        ProductModule
         // InventoryModule, CartModule, etc
     ],
 
@@ -31,6 +67,7 @@ import { AboutComponent } from './components/about/about.component';
         HomeComponent,
         ContactComponent,
         AboutComponent,
+        NotFoundComponent,
         // Header, Footer, Home. About, etc
     ],
 

@@ -4,12 +4,22 @@
 <p>City {{address?.city}}</p>
 
 <!-- for address -->
-<app-address   [address]="address">
+<app-address   [address]="address"
+               (contactEvent)="contactHandler($event)"
+               #address1
+>
 </app-address>
 
+
 <!-- for branch address -->
-<app-address [address]="branchAddress">
+<app-address bind-address="branchAddress"
+             on-contactEvent="contactHandler($event)"
+>
 </app-address>
+
+<button (click)="getDataFromChild()">
+    Get child data
+</button>
 
 <pre>
 {{address | json}}

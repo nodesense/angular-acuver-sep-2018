@@ -1,5 +1,6 @@
+import { AddressComponent } from './../../shared/components/address/address.component';
 import { Address } from './../../shared/models/address';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -19,9 +20,20 @@ export class ContactComponent implements OnInit {
     state: 'Tamilnadu'
   };
 
+  @ViewChild('address1')
+  address1: AddressComponent;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  // to be invoked from child component
+  contactHandler(addr: Address) {
+    alert(JSON.stringify(addr));
+  }
+
+  getDataFromChild() {
+    alert(this.address1.getData());
+  }
 }

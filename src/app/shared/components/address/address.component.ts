@@ -2,7 +2,9 @@
 import { Address } from './../../models/address';
 import { Component,
           OnInit,
-          Input
+          Input,
+          Output,
+          EventEmitter
         } from '@angular/core';
 
 @Component({
@@ -17,9 +19,26 @@ export class AddressComponent implements OnInit {
   @Input()
   address: Address;
 
+  // child to parent communication
+  // always happens through (event)
+  // contactEvent is an custom event 
+  // (contactEvent)
+  @Output()
+  contactEvent: EventEmitter<Address> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  contact() {
+    // todo: emit event to parent
+    // publish the event, parent to subscribe/event binding
+    // this.address is received as $event in parent
+    this.contactEvent.emit(this.address);
+  }
+
+  getData() {
+    return Math.random();
+  }
 }

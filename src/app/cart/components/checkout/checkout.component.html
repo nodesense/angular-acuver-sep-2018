@@ -1,3 +1,39 @@
-<p>
-  checkout works!
-</p>
+<h2>Checkout</h2>
+
+<!-- [()] two way binding
+       () event binding + [] property binding
+
+-->
+<form (ngSubmit)="placeOrder()"
+      (ngReset)="resetOrder()"
+>
+  Name
+  <input name="name" 
+         [(ngModel)]="order.name" />
+
+  Email
+  <input name="email" type='email' 
+        [ngModel]="order.email"
+        (ngModelChange)="order.email = $event"
+        
+        />
+
+  Phone
+  <input name="phone" type='number' 
+        [(ngModel)]="order.phone"
+        />
+
+  <button type="submit">
+    Place Order
+  </button>
+
+  <button type="reset">
+    Reset
+  </button>
+
+
+</form>
+
+<pre>
+{{order | json}}
+</pre>

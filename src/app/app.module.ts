@@ -1,3 +1,4 @@
+import { CartModule } from './cart/cart.module';
 import { SharedModule } from './shared/shared.module';
 // app.module.ts
 
@@ -17,7 +18,8 @@ import { AboutComponent } from './components/about/about.component';
     imports: [
         // browser includes common, compiler modules
         BrowserModule,
-        SharedModule
+        SharedModule,
+        CartModule
         // InventoryModule, CartModule, etc
     ],
 

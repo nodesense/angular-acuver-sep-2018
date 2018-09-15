@@ -26,7 +26,7 @@ export class AboutComponent implements OnInit {
   @ViewChild('p1')
   p1Element: ElementRef;
 
-  // Step 1: No View Initialized
+  // Step 1: No View Initialized, no ViewChild
   constructor() { }
 
   // Step 2: View is initialized in browser

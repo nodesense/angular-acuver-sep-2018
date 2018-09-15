@@ -1,6 +1,6 @@
 <h2>{{title}}</h2>
 <!--
- {{expr}} - interpolation
+ {{expr}} - interpolation - evaluate and convert to string
  [html property]="expr" - property binding
  (event)="expr" - Event binding
 -->
@@ -8,6 +8,8 @@
 <p> Counter {{counter}}</p>
 <p> Counter * 10 ==> {{counter * 10}}</p>
 <p> Counter {{counter % 2 == 0? 'Even': 'Odd'}}</p>
+
+<p>Counter / 3 ==> {{counter/3 | number:"2.4"}} </p>
 
 <input [value]="counter"
        (focus)="onFocus($event)"

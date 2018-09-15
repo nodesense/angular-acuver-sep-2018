@@ -13,6 +13,8 @@ export class FooterComponent implements OnInit {
   @Input()
   year: number;
 
+  today: Date = new Date();
+
   constructor() { }
 
   ngOnInit() {

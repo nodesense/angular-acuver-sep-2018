@@ -1,4 +1,7 @@
 <div>
   <hr />
   <p>Copyrights @{{year}}, {{company}}</p>
+
+  <p>Date {{today | date:'fullDate' | lowercase}} </p>
+  <p>Custom date {{today | date: 'dd/MM/yyyy hh:mm:ss ms' }} </p>
 </div>

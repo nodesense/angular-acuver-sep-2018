@@ -31,13 +31,23 @@
   </tr>
 
   <tr *ngFor="let product of products$ | async | filter:fieldName:predicate:expected ">
-    <td>{{product.name}}</td>
+    <td>
+      <a [routerLink]="['/products', 'edit', product.id]">
+        {{product.name}}
+      </a>
+    
+    </td>
     <td>{{product.price}}</td>
     <td>{{product.year}}</td>
     <td>
       <button (click)="addToCart(product)">
         +Cart
       </button>
+
+      <button (click)="deleteProduct(product.id)">
+          Delete
+        </button>
+
     </td>
   </tr>
 </table>

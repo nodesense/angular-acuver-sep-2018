@@ -37,6 +37,15 @@ export class ProductListComponent implements OnInit {
 
     this.cartService.addItem(item);
   }
+
+  deleteProduct(id: number) {
+    this.productService
+        .deleteProduct(id)
+        .subscribe ( result => {
+           // alert('product deleted');
+           this.products$ = this.productService.getProducts();
+        });
+  }
  
 
 }

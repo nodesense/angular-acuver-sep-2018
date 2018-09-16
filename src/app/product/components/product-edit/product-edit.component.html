@@ -1,3 +1,39 @@
-<p>
-  product-edit works!
-</p>
+<h2>Product Edit/Create {{product.name}}</h2>
+
+<form>
+ Name
+ <input name="name"
+        [(ngModel)]="product.name"
+        required
+        minlength="3"
+
+        />
+
+  Price
+  <input name="price"
+         [(ngModel)]="product.price"
+         type="number"
+         required />
+
+  
+  Year
+  <input name="year"
+        [(ngModel)]="product.year"
+        type="number"
+        required />
+
+
+  Brand
+  <select name="brandId"
+          [(ngModel)]="product.brandId">
+        <option *ngFor="let brand of brands$ | async"
+                [value]="brand.id">
+           {{brand.name}}
+        </option>
+  </select>
+       
+  <button type="submit">
+    Save
+  </button>
+
+</form>

@@ -1,3 +1,4 @@
+import { InterceptorService } from './services/interceptor.service';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,6 +8,8 @@ import { LikeComponent } from './components/like/like.component';
 import { PowerPipe } from './pipes/power.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -30,6 +33,15 @@ import { SortPipe } from './pipes/sort.pipe';
     FilterPipe,
     SortPipe,
     HighlightDirective
+  ],
+
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+
   ]
 })
 export class SharedModule { }

@@ -93,4 +93,8 @@
 # RESTFul server
 
     https://github.com/nodesense/restful-server
+
+# Angular js
+    ** NOT TESTED
+    https://github.com/nodesense/angularjs-workshop
     

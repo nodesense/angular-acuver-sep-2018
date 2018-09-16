@@ -81,3 +81,11 @@
 
     
 
+# Production Build
+    npm install http-server -g
+
+    ng build --prod
+
+    cd dist/product-app
+
+    http-server -c-1 

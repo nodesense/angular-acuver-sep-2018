@@ -48,7 +48,6 @@ export class CartService {
       t += item.qty;
     }
 
-
     this.amount = a;
     this.totalItems = t;
 
@@ -62,6 +61,9 @@ export class CartService {
 
   addItem(item: CartItem) {
     this.cartItems.push(item);
+ 
+    //this.cartItems = [...this.cartItems, item];
+
     // todo: adding same id twice should increment qty
     this.recalculate();
   }
@@ -75,6 +77,8 @@ export class CartService {
     if (index >= 0) {
       this.cartItems.splice(index, 1);
     }
+
+    // this.cartItems = this.cartItems.filter(item => item.id != id);
 
     this.recalculate();
   }

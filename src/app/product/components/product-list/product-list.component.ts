@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 import { CartItem } from '../../../cart/models/cart-item';
+ 
 
 @Component({
   selector: 'app-product-list',
@@ -19,6 +20,7 @@ export class ProductListComponent implements OnInit {
   fieldName: string;
   predicate: string;
   expected: number;
+ 
 
   constructor(private productService: ProductService,
               private cartService: CartService) { }
@@ -35,5 +37,6 @@ export class ProductListComponent implements OnInit {
 
     this.cartService.addItem(item);
   }
+ 
 
 }

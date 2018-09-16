@@ -1,7 +1,12 @@
-<div>
+<div appHighlight [color]=" 'light' + 'blue'   ">
   <hr />
   <p>Copyrights @{{year}}, {{company}}</p>
 
   <p>Date {{today | date:'fullDate' | lowercase}} </p>
   <p>Custom date {{today | date: 'dd/MM/yyyy hh:mm:ss ms' }} </p>
+
+
+<button (click)="k = 1">
+    Dummy
+  </button>
 </div>

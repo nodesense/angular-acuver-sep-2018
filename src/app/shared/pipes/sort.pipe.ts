@@ -11,18 +11,18 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class SortPipe implements PipeTransform {
-
+  
   transform(items: any[],
             fieldName: string,
             sortType: string= 'asc'): any[] {
 
-
-    console.log('sort pipe called', items);
+              console.log('sort pipe called', items);
 
     if (!items || !fieldName) {
       return items;
     }
-
+  
+    console.log('sorting now ** expensive ')
     if (sortType === 'asc') {
       return  items.sort ( (left, right) => {
           if (left[fieldName] > right[fieldName]) {

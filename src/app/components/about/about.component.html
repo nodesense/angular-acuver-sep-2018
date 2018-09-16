@@ -3,7 +3,7 @@
 <!-- # template ref variable
     scope is limited to current component
 -->
-<input #personName />
+<input #personName  appHighlight color="yellow" />
 
 <p #p1> Para </p>
 
@@ -21,7 +21,9 @@
   Show/Hide
 </button>
 
-<ul *ngIf="showMembers == true else membersNotShown">
+<ul *ngIf="showMembers == true else membersNotShown"
+    appHighlight
+>
   <li *ngFor='let memberName of members;let i=index'>
     {{i}}-{{memberName}}
 

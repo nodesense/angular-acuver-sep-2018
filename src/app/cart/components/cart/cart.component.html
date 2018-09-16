@@ -17,7 +17,7 @@
     <th>Remove</th>
   </tr>
 
-  <tr *ngFor="let item of cartItems$ | async">
+  <tr *ngFor="let item of cartItems$ | async | sort:'price':'desc' ">
      <td>{{item.name | uppercase }}</td>
      <td>{{item.price | currency:'INR'}}</td>
      <td>{{item.qty}}</td>

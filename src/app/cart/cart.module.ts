@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 // cart.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,6 +25,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     // forChild for all sub modules
     // apply route to module
     RouterModule.forChild(routes)

@@ -5,6 +5,9 @@ import { CartItem } from '../../models/cart-item';
 
 import {Observable} from 'rxjs';
 
+// FIXME: dynamic items are not sorted
+// after page is initialized
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',

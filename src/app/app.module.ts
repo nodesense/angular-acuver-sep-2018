@@ -1,5 +1,6 @@
-import { ProductModule } from './product/product.module';
-import { CartModule } from './cart/cart.module';
+// import { ProductModule } from './product/product.module';
+// import { CartModule } from './cart/cart.module';
+
 import { SharedModule } from './shared/shared.module';
 // app.module.ts
 
@@ -44,6 +45,15 @@ const routes: Routes = [
     },
 
     {
+        path: 'products',
+        loadChildren: './product/product.module#ProductModule'
+    },
+    {
+        path: 'cart',
+        loadChildren: './cart/cart.module#CartModule'
+    },
+
+    {
         path: '**',
         component: NotFoundComponent
     }
@@ -60,8 +70,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         HttpClientModule,
         SharedModule,
-        CartModule, // also include cart routes
-        ProductModule
+//        CartModule, // also include cart routes
+//        ProductModule
         // InventoryModule, CartModule, etc
     ],
 

@@ -1,5 +1,6 @@
-import { AuthGuard } from './../shared/guards/auth.guard';
 // product.module.ts
+
+import { AuthGuard } from './../shared/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductHomeComponent } from './components/product-home/product-home.component';
@@ -13,7 +14,8 @@ import {Routes, RouterModule} from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 const routes: Routes = [
   {
-    path: 'products',
+    path: '', // lazy loading
+    // path: 'products',
     component: ProductHomeComponent,
     // angular shall call all the guards
     // all guards are called, all should return true

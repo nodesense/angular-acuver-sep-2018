@@ -1,5 +1,8 @@
-import { SharedModule } from './../shared/shared.module';
 // cart.module.ts
+
+import { AuthGuard } from './../shared/guards/auth.guard';
+import { SharedModule } from './../shared/shared.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
@@ -12,13 +15,16 @@ import {Routes, RouterModule} from '@angular/router';
 import { SaveAlertGuard } from '../shared/guards/save-alert.guard';
 const routes: Routes = [
   {
-    path: 'cart',
+    path: '', // for lazy loading
+    //    path: 'cart',
     component: CartComponent
   },
   {
-    path: 'cart/checkout',
+    // path: 'cart/checkout',
+    path: 'checkout', // for lazy loading
     component: CheckoutComponent,
-    canDeactivate: [SaveAlertGuard]
+    canDeactivate: [SaveAlertGuard],
+    canActivate: [AuthGuard]
   }
 ];
 

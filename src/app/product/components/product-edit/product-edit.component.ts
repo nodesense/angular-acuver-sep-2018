@@ -4,7 +4,7 @@ import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 
 import {
-  ActivatedRoute, // to read url data
+  ActivatedRoute, Router, // to read url data
 } from '@angular/router';
 import { Brand } from '../../models/brand';
 import { ProductService } from '../../services/product.service';
@@ -19,7 +19,8 @@ export class ProductEditComponent implements OnInit {
   brands$: Observable<Brand[]>;
 
   constructor(private route: ActivatedRoute, 
-              private productService: ProductService) { }
+              private productService: ProductService,
+              private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params.id;
@@ -40,7 +41,8 @@ export class ProductEditComponent implements OnInit {
   saveProduct() {
     this.productService.saveProduct(this.product)
         .subscribe ( savedProduct => {
-
+            this.router
+                .navigate(['/', 'products']);
         });
   }
 

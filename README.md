@@ -98,3 +98,7 @@
     ** NOT TESTED
     https://github.com/nodesense/angularjs-workshop
     
+
+# For testing
+
+    https://github.com/nodesense/angular-mindtree-sep-2018

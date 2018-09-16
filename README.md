@@ -102,3 +102,9 @@
 # For testing
 
     https://github.com/nodesense/angular-mindtree-sep-2018
+
+
+# Library 
+    https://blog.angularindepth.com/creating-a-library-in-angular-6-87799552e7e5
+
+    

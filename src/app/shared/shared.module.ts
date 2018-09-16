@@ -24,7 +24,12 @@ import { SortPipe } from './pipes/sort.pipe';
   // list of public component, directive, pipes
   // to be used in other modules
   exports: [
-    AddressComponent
+    AddressComponent,
+    LikeComponent,
+    PowerPipe,
+    FilterPipe,
+    SortPipe,
+    HighlightDirective
   ]
 })
 export class SharedModule { }

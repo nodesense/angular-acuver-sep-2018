@@ -5,9 +5,11 @@ import { ProductHomeComponent } from './components/product-home/product-home.com
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
 import { ProductSearchComponent } from './components/product-search/product-search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import {Routes, RouterModule} from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 const routes: Routes = [
   {
     path: 'products',
@@ -32,7 +34,6 @@ const routes: Routes = [
         path: 'search',
         component: ProductSearchComponent
       },
-      
     ]
   }
 ];
@@ -41,7 +42,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [ProductHomeComponent, ProductListComponent, ProductEditComponent, ProductSearchComponent]
 })

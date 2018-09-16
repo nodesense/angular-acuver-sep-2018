@@ -16,6 +16,10 @@ export class ProductListComponent implements OnInit {
 
   products$: Observable<Product[]>;
 
+  fieldName: string;
+  predicate: string;
+  expected: number;
+
   constructor(private productService: ProductService,
               private cartService: CartService) { }
 

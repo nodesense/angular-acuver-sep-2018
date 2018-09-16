@@ -89,3 +89,8 @@
     cd dist/product-app
 
     http-server -c-1 
+
+# RESTFul server
+
+    https://github.com/nodesense/restful-server
+    

@@ -1,12 +1,19 @@
-<div appHighlight [color]=" 'light' + 'blue'   ">
+<div appHighlight [color]=" 'light' + 'blue'   "
+     #highlight1="appHighlight"
+     #myDiv
+>
+  <!-- myDiv is a DOM element 
+      highlight1 is an instance of Directive
+  -->
+
   <hr />
   <p>Copyrights @{{year}}, {{company}}</p>
 
   <p>Date {{today | date:'fullDate' | lowercase}} </p>
   <p>Custom date {{today | date: 'dd/MM/yyyy hh:mm:ss ms' }} </p>
 
-
-<button (click)="k = 1">
-    Dummy
+  <p>Highlight color {{highlight1.color}}</p>
+  <button (click)="highlight1.setColor('purple')">
+    Set Color
   </button>
 </div>

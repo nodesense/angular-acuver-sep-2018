@@ -46,9 +46,17 @@
   <a routerLink="/auth/login" 
       class="button"
       routerLinkActive="success"
+
+      *ngIf= "!(isAuth$ | async)"
       >
     Login
   </a>
+
+  <button (click)="logout()"
+        *ngIf= "(isAuth$ | async)"
+  >
+    Logout
+  </button>
 
 
   <button (click)="empty()">

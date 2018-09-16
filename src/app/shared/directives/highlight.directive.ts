@@ -16,11 +16,22 @@ import { Directive,
 
 @Directive({
   selector: '[appHighlight]', // MUST have []
+  // to access directive instance in component
+  exportAs: 'appHighlight'
 })
 export class HighlightDirective implements OnInit, OnDestroy {
 
   @Input()
   color: string;
+
+  getColor() {
+    // console.log('getColor called');
+    return this.color;
+  }
+
+  setColor(color: string) {
+    this.color = color;
+  }
 
   constructor(private hostElement: ElementRef,
              private renderer: Renderer2) {

@@ -20,6 +20,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 // ng 4.3 onwards
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 
 // step 1: configure url to component mapping
@@ -35,6 +36,11 @@ const routes: Routes = [
     {
         path: 'contact',
         component: ContactComponent
+    },
+
+    {
+        path: 'auth/login',
+        component: LoginComponent
     },
 
     {
@@ -68,6 +74,7 @@ const routes: Routes = [
         ContactComponent,
         AboutComponent,
         NotFoundComponent,
+        LoginComponent,
         // Header, Footer, Home. About, etc
     ],
 

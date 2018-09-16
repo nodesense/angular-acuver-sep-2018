@@ -1,3 +1,4 @@
+import { AuthGuard } from './../shared/guards/auth.guard';
 // product.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +15,9 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductHomeComponent,
+    // angular shall call all the guards
+    // all guards are called, all should return true
+    canActivate: [AuthGuard],
 
     // nested navigation, derive path from parent
     children: [

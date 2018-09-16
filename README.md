@@ -18,6 +18,9 @@
     ng g component components/contact
     ng g component components/not-found
 
+    ng g component components/login
+
+
 # Shared module
 
     ng g module shared
@@ -34,6 +37,11 @@
     ng g interface shared/models/address
 
     ng g service shared/services/data
+
+    ng g guard shared/guards/auth
+    ng g service shared/services/auth
+    ng g service shared/services/interceptor
+    ng g guard shared/guards/save-alert
 
 
 # Cart Module

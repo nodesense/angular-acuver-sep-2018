@@ -42,7 +42,7 @@
     ng g service shared/services/auth
     ng g service shared/services/interceptor
     ng g guard shared/guards/save-alert
-
+    ng g interface shared/models/IDataSave
 
 # Cart Module
 

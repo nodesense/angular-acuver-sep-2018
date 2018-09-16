@@ -18,10 +18,10 @@ export class OrderService {
       console.log('OrderService created');
   }
 
-  placeOrder(order: Order): Observable<Order[]> {
+  placeOrder(order: Order): Observable<Order> {
     return this
           .http
-          .post<Order[]> (`${environment.apiEndPoint}/api/orders`,
+          .post<Order> (`${environment.apiEndPoint}/api/orders`,
                           order
           );
   }

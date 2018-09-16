@@ -9,6 +9,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import {FormsModule} from '@angular/forms';
 
 import {Routes, RouterModule} from '@angular/router';
+import { SaveAlertGuard } from '../shared/guards/save-alert.guard';
 const routes: Routes = [
   {
     path: 'cart',
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: 'cart/checkout',
-    component: CheckoutComponent
+    component: CheckoutComponent,
+    canDeactivate: [SaveAlertGuard]
   }
 ];
 

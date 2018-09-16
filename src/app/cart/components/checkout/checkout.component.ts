@@ -1,7 +1,9 @@
+// checkout.component.ts
 import { Order } from './../../models/order';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { OrderService } from '../../services/order.service';
+import { IDataSave } from '../../../shared/models/idata-save';
 
 @Component({
   selector: 'app-checkout',
@@ -13,8 +15,11 @@ import { OrderService } from '../../services/order.service';
     OrderService
   ]
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, IDataSave {
   order: Order = new Order();
+
+  saved = false;
+
 
   constructor(private cartService: CartService, 
               private orderService: OrderService) { 
@@ -31,14 +36,19 @@ export class CheckoutComponent implements OnInit {
     this.order.cartItems = this.cartService.cartItems;
     this.order.amount = this.cartService.amount;
     
-    alert(JSON.stringify(this.order));
+    // alert(JSON.stringify(this.order));
 
     this.orderService
       .placeOrder(this.order)
       .subscribe ( savedOrder => {
-        alert(JSON.stringify(savedOrder));
+        // alert(JSON.stringify(savedOrder));
+        this.saved = true;
       });
 
+  }
+
+  isSaved() {
+    return this.saved;
   }
 
   resetOrder() {
